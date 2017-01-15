@@ -15,7 +15,7 @@ module.exports = {
     output: {
         publicPath: 'http://localhost:4200/',
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.js'
+        filename: '[name].[hash].bundle.js'
     },
 
     module: {
@@ -84,7 +84,7 @@ module.exports = {
         new CommonsChunkPlugin({
             name: ['vendor', 'polyfills']
         }),
-        new ExtractTextPlugin('[name].css'),
+        new ExtractTextPlugin('[name].[hash].css'),
         new HtmlWebpackPlugin({
             template: 'app/public/index.html',
             chunkSortMode: 'dependency'
