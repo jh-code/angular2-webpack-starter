@@ -13,7 +13,7 @@ node_js:
   - "6"
   - "node"
 before_install:
-  - gem isntall compass
+  - gem install compass
 install:
   - npm install
 before_script:
