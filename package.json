@@ -5,15 +5,16 @@
     "main": "app/car.ts",
     "scripts": {
         "build": "npm run clean && npm run compass:prod && npm run ngc && npm run webpack:prod",
-        "ci": "npm run compass:prod && npm run ngc && webpack --config webpack.prod.config.js",
+        "ci": "npm run compass:prod && npm run ngc && npm run webpack:ci",
         "clean": "rimraf dist build app/*.css app/**/*.css app/**/**/*.css",
         "compass:prod": "compass compile --output-style compressed --force",
         "compass:dev": "compass watch",
         "ngc": "ngc -p tsconfig.prod.json",
         "serve": "lite-server",
         "start": "npm-run-all --parallel compass:dev webpack:dev",
-        "webpack:prod": "webpack --progress --config webpack.prod.config.js",
-        "webpack:dev": "webpack-dev-server --progress --port 4200"
+        "webpack:ci": "webpack --config webpack.prod.config.js",
+        "webpack:dev": "webpack-dev-server --progress --port 4200",
+        "webpack:prod": "webpack --progress --config webpack.prod.config.js"
     },
     "repository": {
         "type": "git",
