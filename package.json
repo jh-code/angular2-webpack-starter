@@ -4,14 +4,16 @@
     "description": "Basic Angular2 app with AoT compilation for production and a development environment.",
     "main": "app/car.ts",
     "scripts": {
-        "build": "npm run clean && npm run ngc && webpack --progress --config webpack.prod.config.js",
-        "clean": "rimraf dist build",
-        "compass": "compass watch",
-        "dev": "webpack-dev-server --progress --port 4200",
+        "build": "npm run clean && npm run compass:prod && npm run ngc && npm run webpack:prod",
+        "ci": "npm run compass:prod && npm run ngc && webpack --config webpack.prod.config.js",
+        "clean": "rimraf dist build app/*.css app/**/*.css app/**/**/*.css",
+        "compass:prod": "compass compile --output-style compressed --force",
+        "compass:dev": "compass watch",
         "ngc": "ngc -p tsconfig.prod.json",
         "serve": "lite-server",
-        "start": "npm-run-all --parallel compass dev",
-        "ci": "compass compile --production && npm run ngc && webpack --config webpack.prod.config.js"
+        "start": "npm-run-all --parallel compass:dev webpack:dev",
+        "webpack:prod": "webpack --progress --config webpack.prod.config.js",
+        "webpack:dev": "webpack-dev-server --progress --port 4200"
     },
     "repository": {
         "type": "git",
