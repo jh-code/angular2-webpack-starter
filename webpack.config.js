@@ -3,6 +3,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -34,7 +35,10 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loaders: ['style-loader', 'css-loader'],
+                loader: ExtractTextPlugin.extract({
+                    fallbackLoader: 'style-loader',
+                    loader: 'css-loader'
+                }),
                 include: path.resolve(__dirname, 'app/public/styles')
             },
             {
@@ -77,6 +81,7 @@ module.exports = {
         new CommonsChunkPlugin({
             name: ['vendor', 'polyfills']
         }),
+        new ExtractTextPlugin('[name].css'),
         new HtmlWebpackPlugin({
             template: 'app/public/index.html',
             chunkSortMode: 'dependency'

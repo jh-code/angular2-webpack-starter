@@ -1,11 +1,10 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler navbar-toggler-right" type="button" (click)="navCollapsed = !navCollapsed" aria-controls="navbarsExampleDefault" [attr.aria-expanded]="!navCollapsed" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     <a class="navbar-brand" routerLink="/home">Site Name</a>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <div class="navbar-collapse" [ngbCollapse]="navCollapsed" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
