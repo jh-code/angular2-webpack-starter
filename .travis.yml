@@ -6,5 +6,5 @@ node_js:
 before_script:
     - 'npm install'
 
-after_script:
+script:
     - 'npm run build'
