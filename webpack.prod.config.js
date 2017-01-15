@@ -1,16 +1,16 @@
 'use strict';
-var AotPlugin = require('@ngtools/webpack').AotPlugin;
-var webpack = require('webpack');
-var path = require('path');
-var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const AotPlugin = require('@ngtools/webpack').AotPlugin;
+const webpack = require('webpack');
+const path = require('path');
+const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        'polyfills': path.resolve(__dirname, 'app/polyfills.ts'),
-        'vendor': path.resolve(__dirname, 'app/vendor.ts'),
-        'main': path.resolve(__dirname, 'app/main.aot.ts')
+        polyfills: path.resolve(__dirname, 'app/polyfills.ts'),
+        vendor: path.resolve(__dirname, 'app/vendor.ts'),
+        main: path.resolve(__dirname, 'app/main.aot.ts')
     },
 
     output: {

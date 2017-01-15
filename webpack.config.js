@@ -1,9 +1,9 @@
 'use strict';
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -13,6 +13,7 @@ module.exports = {
     },
 
     output: {
+        publicPath: 'http://localhost:4200/',
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.js'
     },
@@ -26,8 +27,10 @@ module.exports = {
             },
             {
                 test: /\.ts$/,
-                loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
-                exclude: [/node_modules/]
+                loaders: [
+                    'awesome-typescript-loader',
+                    'angular2-template-loader'
+                ]
             },
             {
                 test: /\.html$/,
@@ -89,7 +92,8 @@ module.exports = {
     ],
 
     devServer: {
-        historyApiFallback: true
+        historyApiFallback: true,
+        port: 4200
     },
 
     devtool: 'eval-source-map'
