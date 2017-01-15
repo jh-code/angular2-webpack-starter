@@ -1,6 +1,6 @@
 {
   "name": "@jh-code/angular2-webpack-starter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Basic Angular2 app with AoT compilation for production and a development environment.",
   "main": "app/main.ts",
   "scripts": {
