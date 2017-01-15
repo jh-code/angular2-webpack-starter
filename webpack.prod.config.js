@@ -32,7 +32,7 @@ module.exports = {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract({
                     fallbackLoader: 'style-loader',
-                    laoder: 'css-loader'
+                    loader: 'css-loader'
                 }),
                 include: path.resolve(__dirname, 'app/public/styles')
             },
@@ -72,7 +72,7 @@ module.exports = {
         new CommonsChunkPlugin({
             name: ['vendor', 'polyfills']
         }),
-        new ExtractTextPlugin('style.css'),
+        new ExtractTextPlugin('[name].css'),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'app/public/index.html'),
             chunkSortMode: 'dependency'
