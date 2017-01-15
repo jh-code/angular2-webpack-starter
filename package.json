@@ -11,7 +11,7 @@
         "ngc": "ngc -p tsconfig.prod.json",
         "serve": "lite-server",
         "start": "npm-run-all --parallel compass dev",
-        "ci": "npm run ngc && webpack --config webpack.prod.config.js"
+        "ci": "compass compile --production && npm run ngc && webpack --config webpack.prod.config.js"
     },
     "repository": {
         "type": "git",
