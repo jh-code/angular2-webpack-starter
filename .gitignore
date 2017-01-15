@@ -1,6 +1,7 @@
 .idea
 .vscode
 .sass-cache
+npm-debug.log
 
 node_modules
 dist
