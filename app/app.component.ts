@@ -3,8 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 // global styles
-import './public/styles/bootstrap/bootstrap-reboot.css';
-import './public/styles/bootstrap/bootstrap-grid.css';
 import './public/styles/bootstrap/bootstrap.css';
 import './public/styles/style.css';
 
