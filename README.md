@@ -1,5 +1,6 @@
 # Angular2 Webpack Starter
 [![Dependency Status](https://img.shields.io/david/jh-code/angular2-webpack-starter.svg)](https://david-dm.org/jh-code/angular2-webpack-starter)
+[![devDependency Status](https://img.shields.io/david/dev/jh-code/angular2-webpack-starter.svg)](https://david-dm.org/jh-code/angular2-webpack-starter?type=dev)
 
 This is a basic Angular2 Webpack starter app. It features Ahead-of-Time compilation for production and a development server.
 
