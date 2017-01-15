@@ -7,7 +7,7 @@ This is a basic Angular2 Webpack starter app. It features Ahead-of-Time compilat
 
 ### Requirements
 
-[Compass](http://compass-style.org) is required for development (or you can modify the `start`script in `package.json`).
+[Compass](http://compass-style.org) is required for development and production.
 
 ### Installation
 
