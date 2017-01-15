@@ -1,0 +1,33 @@
+{
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noEmitHelpers": true,
+        "sourceMap": true,
+        "types": [
+            "node"
+        ],
+        "typeRoots": [
+            "../node_modules/@types"
+        ],
+        "lib": [
+            "es2015",
+            "dom"
+        ]
+    },
+    "files": [
+        "app/main.ts",
+        "app/app.module.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "app/main.aot.ts"
+    ]
+}
