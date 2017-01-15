@@ -1,9 +1,14 @@
+// angular stuff
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { routing } from './app.routing';
 
+// libraries
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+// components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -14,7 +19,8 @@ import { NoContentComponent } from './no-content/no-content.component';
         BrowserModule,
         HttpModule,
         FormsModule,
-        routing
+        routing,
+        NgbModule.forRoot()
     ],
     declarations: [
         AppComponent,
