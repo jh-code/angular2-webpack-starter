@@ -6,3 +6,5 @@ node_modules
 dist
 build
 app/*.css
+app/**/*.css
+app/**/**/*.css
