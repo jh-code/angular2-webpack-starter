@@ -6,6 +6,5 @@ npm-debug.log
 node_modules
 dist
 build
-app/*.css
-app/**/*.css
-app/**/**/*.css
+app/public/styles/**/*.css
+app/**/*.component.css
