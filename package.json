@@ -13,8 +13,8 @@
     "serve": "lite-server",
     "start": "npm-run-all --parallel compass:dev webpack:dev",
     "webpack:ci": "webpack --config webpack.prod.config.js",
-    "webpack:dev": "webpack-dev-server --progress --port 4200",
-    "webpack:prod": "webpack --progress --config webpack.prod.config.js"
+    "webpack:dev": "webpack-dev-server --inline --progress --colors",
+    "webpack:prod": "webpack -p --progress --config webpack.prod.config.js"
   },
   "repository": {
     "type": "git",
