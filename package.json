@@ -1,8 +1,8 @@
 {
-    "name": "angular2-webpack-starter",
+    "name": "@jh-code/angular2-webpack-starter",
     "version": "1.0.0",
     "description": "Basic Angular2 app with AoT compilation for production and a development environment.",
-    "main": "app/car.ts",
+    "main": "app/main.ts",
     "scripts": {
         "build": "npm run clean && npm run compass:prod && npm run ngc && npm run webpack:prod",
         "ci": "npm run compass:prod && npm run ngc && npm run webpack:ci",
