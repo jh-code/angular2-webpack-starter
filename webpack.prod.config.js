@@ -5,6 +5,9 @@ const path = require('path');
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -15,7 +18,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.min.js'
+        filename: '[name].min.js'
     },
 
     module: {
@@ -73,21 +76,33 @@ module.exports = {
             name: ['vendor', 'polyfills']
         }),
         new ExtractTextPlugin('[name].css'),
+        new OptimizeCssAssetsPlugin({
+            cssProcessorOptions: {
+                discardComments: {
+                    removeAll: true
+                }
+            }
+        }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'app/public/index.html'),
-            chunkSortMode: 'dependency'
+            chunkSortMode: 'dependency',
+            minify: {
+                caseSensitive: true,
+                collapseWhitespace: true,
+                removeComments: true
+            }
         }),
+        new ScriptExtHtmlWebpackPlugin({
+            inline: [/\.js$/]
+        }),
+        new StyleExtHtmlWebpackPlugin(),
         new webpack.LoaderOptionsPlugin({
             minimize: true,
             debug: false
         }),
         new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: true
-            },
-            output: {
-                comments: false
-            },
+            compress: { warnings: true },
+            output: { comments: false },
             sourceMap: false
         })
     ],
