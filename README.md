@@ -42,7 +42,7 @@ This will open your browser to http://localhost:3000 with the result of the buil
 
 - Development server with lite-server and BrowserSync
 - AoT compilation with tree-shaking and inline CSS/JS, minification
-- Bootstrap 4 starter template with ng-Bootstrap
+- Bootstrap 4 starter template with ng-bootstrap
 - TSLint, Codelyzer
 - Routing
 
