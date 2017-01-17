@@ -1,8 +1,8 @@
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { NoContentComponent } from './no-content/no-content.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { NoContentComponent } from './components/no-content/no-content.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
