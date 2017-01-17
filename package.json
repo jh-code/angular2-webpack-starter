@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run clean && npm run compass:prod && npm run ngc && npm run webpack:prod",
     "ci": "npm run compass:prod && npm run ngc && npm run webpack:ci",
-    "clean": "rimraf dist build app/public/styles/style.css && find ./app -name '*.component.css' -type f -delete",
+    "clean": "rimraf dist build",
     "compass:prod": "compass compile --output-style compressed --force",
     "compass:dev": "compass watch",
     "ngc": "ngc -p tsconfig.prod.json",
