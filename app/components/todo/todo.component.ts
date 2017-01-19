@@ -7,7 +7,7 @@ import { Todo } from '../../interfaces';
     styleUrls: ['./todo.component.css']
 })
 export class TodoComponent {
-    @Input() todo: Todo;
+    @Input() public todo: Todo;
 
     constructor() {
         // 

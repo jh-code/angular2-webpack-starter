@@ -38,7 +38,8 @@ import { NoContentComponent } from './containers/no-content/no-content.component
         AppComponent,
         HomeComponent,
         AboutComponent,
-        NoContentComponent
+        NoContentComponent,
+        TodoComponent
     ],
     providers: [
         DataService,

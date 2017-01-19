@@ -1,13 +1,9 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { TodoService } from '../../services/todo.service';
-import { Todo } from '../../interfaces';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
     selector: 'home-component',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
