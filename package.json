@@ -48,7 +48,6 @@
     "@ngrx/store": "^2.2.1",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
-    "es6-shim": "^0.35.2",
     "reflect-metadata": "^0.1.9",
     "reselect": "^2.5.4",
     "rxjs": "^5.0.3",
