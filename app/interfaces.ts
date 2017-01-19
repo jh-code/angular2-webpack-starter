@@ -3,6 +3,7 @@ export interface Todo {
     title: string;
     desc: string;
     complete: boolean;
+    timestamp: number;
 }
 
 export interface TodoEntity {
