@@ -5,9 +5,13 @@ export interface Todo {
     complete: boolean;
 }
 
+export interface TodoEntity {
+    [id: number]: Todo
+};
+
 export interface TodoState {
     ids: number[];
-    entities: { [id: number]: Todo };
+    entities: TodoEntity;
     selectedId: string | null;
 }
 

@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 import { createSelector } from 'reselect';
-import { Todo, TodoState } from '../interfaces';
+import { Todo, TodoState, TodoEntity } from '../interfaces';
 
 const initialState: TodoState = {
     ids: [],
@@ -8,13 +8,13 @@ const initialState: TodoState = {
     selectedId: null
 };
 
-export function reducer(state = initialState, action: Action): TodoState {
+export function TodoReducer(state = initialState, action: Action): TodoState {
     switch (action.type) {
         case 'LOAD':
             const todos = action.payload;
             const newTodos = todos.filter((todo) => !state.entities[todo.id]);
             const newTodoIds = newTodos.map((todo) => todo.id);
-            const newTodoEntities = newTodos.reduce((entities: { [id: number]: Todo }, todo: Todo) => {
+            const newTodoEntities = newTodos.reduce((entities: TodoEntity, todo: Todo) => {
                 return Object.assign(entities, { [todo.id]: todo });
             });
 
@@ -22,7 +22,7 @@ export function reducer(state = initialState, action: Action): TodoState {
                 ids: [...state.ids, ...newTodoIds],
                 entities: Object.assign({}, state.entities, newTodoEntities),
                 selectedId: state.selectedId
-            }
+            };
         case 'INSERT':
             const todo = action.payload;
 

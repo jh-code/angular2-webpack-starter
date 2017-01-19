@@ -7,7 +7,7 @@ import { routing } from './app.routing';
 
 // ngrx
 import { StoreModule } from '@ngrx/store';
-import * as fromTodo from './reducers/todos.reducer';
+import { TodoReducer } from './reducers/todos.reducer';
 
 // libraries
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -32,7 +32,7 @@ import { NoContentComponent } from './containers/no-content/no-content.component
         FormsModule,
         routing,
         NgbModule.forRoot(),
-        StoreModule.provideStore({ todos: fromTodo.reducer })
+        StoreModule.provideStore({ todos: TodoReducer })
     ],
     declarations: [
         AppComponent,
