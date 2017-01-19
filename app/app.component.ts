@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { TodoService } from './services/todo.service';
@@ -11,23 +11,21 @@ import './public/styles/style.css';
 @Component({
     selector: 'app-component',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
     public navCollapsed: boolean = true;
     public currentRoute: string;
-    public todos: Subscription;
+    public routerSub: Subscription;
 
     constructor(
-        private router: Router,
-        private todoService: TodoService
+        private router: Router
     ) {
         // 
     }
 
     public ngOnInit() {
-        this.router.events.subscribe((event) => {
+        this.routerSub = this.router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {
                 this.currentRoute = event.url;
                 this.navCollapsed = true;
@@ -36,6 +34,6 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     public ngOnDestroy() {
-        this.todos.unsubscribe();
+        this.routerSub.unsubscribe();
     }
 }
