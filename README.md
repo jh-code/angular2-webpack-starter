@@ -5,7 +5,7 @@
 
 This is a basic Angular2 Webpack starter app. It features Ahead-of-Time compilation with tree-shaking for production and a development server without all the extra junk.
 
-It will bundle your entire app into a single HTML file with inline CSS and Javascript. Currently the build size is 1.5MB before gzip.
+It will bundle your entire app into a single HTML file with inline CSS and Javascript. Currently the build size is 1.3MB (296.3kB after gzip).
 
 ### Requirements
 
