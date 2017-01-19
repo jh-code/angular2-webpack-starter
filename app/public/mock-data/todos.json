@@ -2,11 +2,15 @@
     {
         "id": 1,
         "title": "You gotta do it",
-        "description": "This is what you gotta do"
+        "description": "This is what you gotta do",
+        "complete": false,
+        "timestamp": 1484804437915
     },
     {
         "id": 2,
         "title": "Pay your rent",
-        "description": "Don't get evicted."
+        "description": "Don't get evicted.",
+        "complete": false,
+        "timestamp": 1484804459169
     }
 ]
