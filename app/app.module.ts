@@ -10,9 +10,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // components
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { NoContentComponent } from './components/no-content/no-content.component';
+import { HomeComponent } from './containers/home/home.component';
+import { AboutComponent } from './containers/about/about.component';
+import { NoContentComponent } from './containers/no-content/no-content.component';
 
 @NgModule({
     imports: [
