@@ -87,7 +87,7 @@ module.exports = {
         new ExtractTextPlugin('[name].[hash].css'),
         new HtmlWebpackPlugin({
             template: 'app/public/index.html',
-            chunkSortMode: 'dependency'
+            chunksSortMode: 'dependency'
         })
     ],
 
