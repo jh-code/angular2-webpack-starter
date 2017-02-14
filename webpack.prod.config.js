@@ -85,7 +85,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'app/public/index.html'),
-            chunkSortMode: 'dependency',
+            chunksSortMode: 'dependency',
             minify: {
                 caseSensitive: true,
                 collapseWhitespace: true,
